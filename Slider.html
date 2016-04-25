@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/eggplant/jquery-ui.css">
+    <style type="text/css">
+        .ui-slider-handle:focus {
+            outline: none;
+        }
+        .slidercss {
+            width: 400px;
+            height: 40px;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function () {
+      
+            $("#slider").slider({
+                value: 3,
+                min: 1,
+                max: 100,
+                step: 1,
+                slide: function (event, ui) {
+                    $("#value").val(ui.value);
+                }
+            });    
+        });
+    </script>
+</head>
+<body>
+    <div id="slider" class="slidercss"></div>
+    <br /><br />
+    Value: <input id="value"/>
+</body>
+</html>
